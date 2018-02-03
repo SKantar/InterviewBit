@@ -31,7 +31,8 @@ class Solution:
         while tmp <= A * A:
             mat[i][j] = tmp
             tmp += 1
-            i, j = i + steps[curr][0], j + steps[curr][1]
+            step_x, step_y = steps[curr]
+            i, j = i + step_x, j + step_y
 
             # check does current position match any corner or current ring (k)
             curr += (curr == 0 and j == A - 1 - k) + (curr == 1 and i == A - 1 - k) + (curr == 2 and j == k) + (curr == 3 and i == k)
