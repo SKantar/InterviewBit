@@ -18,22 +18,35 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 class Solution:
+
+    # @param A : tuple of integers
+    # @return an integer
+    # def repeatedNumber(self, A):
+    #     slow, fast = A[0], A[A[0]]
+    #     try:
+    #         while slow != fast:
+    #             slow, fast = A[slow], A[A[fast]]
+    #     except Exception:
+    #         return -1
+    #     fast = 0
+    #     while slow != fast:
+    #         slow, fast = A[slow], A[fast]
+    #     return slow
+
     # @param A : tuple of integers
     # @return an integer
     def repeatedNumber(self, A):
-        slow, fast = A[0], A[A[0]]
-        try:
-            while slow != fast:
-                slow, fast = A[slow], A[A[fast]]
-        except Exception:
-            return -1
-        fast = 0
-        while slow != fast:
-            slow, fast = A[slow], A[fast]
-        return slow
+        hash = dict()
+
+        for elem in A:
+            if elem in hash:
+                return elem
+            else:
+                hash[elem] = True
+        return -1
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.repeatedNumber([1, 2, 3, 4]))
+    print(s.repeatedNumber([4, 1, 2, 3]))
