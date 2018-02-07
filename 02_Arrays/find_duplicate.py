@@ -19,6 +19,7 @@
 
 class Solution:
 
+    # Approach I
     # @param A : tuple of integers
     # @return an integer
     # def repeatedNumber(self, A):
@@ -33,6 +34,7 @@ class Solution:
     #         slow, fast = A[slow], A[fast]
     #     return slow
 
+    # Approach II
     # @param A : tuple of integers
     # @return an integer
     # def repeatedNumber(self, A):
@@ -45,6 +47,7 @@ class Solution:
     #             hash[elem] = True
     #     return -1
 
+    # Approach III
     # @param A : tuple of integers
     # @return an integer
     def repeatedNumber(self, A):
