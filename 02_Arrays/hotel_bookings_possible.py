@@ -38,7 +38,7 @@ class Solution:
         i = j = k = 0
 
         while i < len(arrive):
-            if depart[j] <= arrive[i]:
+            if j < len(depart) and depart[j] <= arrive[i]:
                 k, j = k - 1, j + 1
             else:
                 k, i = k + 1, i + 1
