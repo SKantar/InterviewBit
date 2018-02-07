@@ -29,7 +29,7 @@ class Solution:
 
         class Key(Interval):
             def __init__(self, interval):
-                super().__init__(interval.start, interval.end)
+                Interval.__init__(self, interval.start, interval.end)
 
             def __lt__(self, other):
                 if self.start == other.start:
