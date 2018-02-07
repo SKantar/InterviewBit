@@ -22,7 +22,7 @@ class Solution:
     def repeatedNumber(self, A):
 
         def _calc(x, A):
-            return x if len(list(filter(lambda a: a == x, A))) >= len(A) / 3 else -1
+            return x if len(list(filter(lambda a: a == x, A))) > len(A) / 3 else -1
 
         a = b = float('inf')
         cnt_a = cnt_b = 0
