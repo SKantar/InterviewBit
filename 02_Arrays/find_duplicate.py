@@ -35,18 +35,29 @@ class Solution:
 
     # @param A : tuple of integers
     # @return an integer
-    def repeatedNumber(self, A):
-        hash = dict()
+    # def repeatedNumber(self, A):
+    #     hash = dict()
+    #
+    #     for elem in A:
+    #         if elem in hash:
+    #             return elem
+    #         else:
+    #             hash[elem] = True
+    #     return -1
 
-        for elem in A:
-            if elem in hash:
-                return elem
+    # @param A : tuple of integers
+    # @return an integer
+    def repeatedNumber(self, A):
+        A = list(A)
+        for a in A:
+            if A[abs(a) - 1] < 0:
+                return abs(a)
             else:
-                hash[elem] = True
+                A[abs(a) - 1] *= -1
         return -1
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.repeatedNumber([4, 1, 2, 3]))
+    print(s.repeatedNumber([1, 1, 2, 3]))
