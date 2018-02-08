@@ -17,6 +17,12 @@
 # 1,2,3 → 1,3,2
 # 3,2,1 → 1,2,3
 # 1,1,5 → 1,5,1
+# 20, 50, 113 → 20, 113, 50
+#
+# Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
+#
+# Warning : DO NOT USE LIBRARY FUNCTION FOR NEXT PERMUTATION. Use of Library functions will
+# disqualify your submission retroactively and will give you penalty points.
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -27,23 +33,26 @@ class Solution:
             A[i], A[j] = A[j], A[i]
             i, j = i + 1, j - 1
 
-    def nextPermutation(self, nums):
+    # @param A : list of integers
+    # @return the same list of integer after modification
+    def nextPermutation(self, A):
         succ_pos, pivot = None, None
 
-        for i in range(len(nums) - 2, -1, -1):
-            if nums[i] < nums[i + 1]:
+        for i in range(len(A) - 2, -1, -1):
+            if A[i] < A[i + 1]:
                 pivot = i
                 break
 
         if pivot is not None:
-            for i in range(len(nums) - 1, pivot, -1):
-                if nums[pivot] < nums[i]:
+            for i in range(len(A) - 1, pivot, -1):
+                if A[pivot] < A[i]:
                     succ_pos = i
                     break
-            nums[pivot], nums[succ_pos] = nums[succ_pos], nums[pivot]
-            self._reverse(nums, pivot + 1, len(nums) - 1)
+            A[pivot], A[succ_pos] = A[succ_pos], A[pivot]
+            self._reverse(A, pivot + 1, len(A) - 1)
         else:
-            nums.reverse()
+            A.reverse()
+        return A
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
