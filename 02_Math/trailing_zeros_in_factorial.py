@@ -14,7 +14,6 @@
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-
 class Solution:
     def trailingZeroes(self, n):
         """ Find occurrences of 5, 25, 125, 625 ..."""
