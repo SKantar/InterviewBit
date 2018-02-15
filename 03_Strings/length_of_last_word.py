@@ -17,6 +17,19 @@
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+# Approach I
+# def lengthOfLastWord(self, A):
+#     i, length = len(A) - 1, 0
+#     if i >= 0:
+#         while i >= 0 and A[i].isspace():
+#             i -= 1
+#
+#         while i >= 0 and not A[i].isspace():
+#             length += 1
+#             i -= 1
+#
+#     return length
+
 class Solution:
     # @param A : string
     # @return an integer
