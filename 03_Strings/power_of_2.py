@@ -23,13 +23,11 @@ class Solution:
 
     class BigNum(str):
         def __eq__(self, other):
-            if len(self) != len(other):
-                return False
-
-            for a, b in zip(self, other):
-                if a != b:
-                    return False
-
+            if len(self) == len(other):
+                for a, b in zip(self, other):
+                    if a != b:
+                        return False
+                return True
             return False
 
         def __mod__(self, other):
@@ -67,3 +65,4 @@ if __name__ == "__main__":
     print(s.power("2"))
     print(s.power("64"))
     print(s.power("4096"))
+
