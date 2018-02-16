@@ -20,7 +20,6 @@ class Solution:
 
     def bs_right(self, A, B):
         """ Find right most """
-
         low, high = 0, len(A) - 1
 
         while low <= high:
