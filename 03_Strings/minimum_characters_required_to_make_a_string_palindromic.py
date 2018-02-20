@@ -1,7 +1,8 @@
 # Minimum Characters required to make a String Palindromic
 # https://www.interviewbit.com/problems/minimum-characters-required-to-make-a-string-palindromic/
 #
-# You are given a string. The only operation allowed is to insert characters in the beginning of the string. How many minimum characters are needed to be inserted to make the string a palindrome string
+# You are given a string. The only operation allowed is to insert characters in the beginning of the string.
+# How many minimum characters are needed to be inserted to make the string a palindrome string
 #
 # Example:
 # Input: ABC
