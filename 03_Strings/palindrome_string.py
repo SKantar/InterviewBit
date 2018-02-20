@@ -34,12 +34,12 @@ class Solution:
     # @return an integer
     def isPalindrome(self, A):
         low, high = 0, len(A) - 1
-        while low <= high:
+        while low < high:
 
-            while low <= high and not A[low].isalnum():
+            while low < high and not A[low].isalnum():
                 low += 1
 
-            while low <= high and not A[high].isalnum():
+            while low < high and not A[high].isalnum():
                 high -= 1
 
             if A[low].lower() != A[high].lower():
