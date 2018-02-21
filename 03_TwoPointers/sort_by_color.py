@@ -32,11 +32,12 @@ class Solution:
                 b = b - 1
             else:
                 i += 1
+        return A
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == "__main__":
     s = Solution()
-    A = [0, 1, 0, 2, 1, 0]
+    A = [0]
     s.sortColors(A)
     print(A)
