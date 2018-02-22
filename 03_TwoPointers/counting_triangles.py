@@ -24,25 +24,22 @@ class Solution:
     # @param A : list of integers
     # @return an integer
     def nTriang(self, A):
-        A.sort()
+        A = sorted(A)
         n, ans = len(A), 0
         for k in range(n - 2):
-            i, j = k + 1, k + 2
-
-            while i < n - 1:
-                if j < n and A[k] + A[i] > A[j]:
+            j = k + 2
+            for i in range(k + 1, n - 1):
+                while j < n and A[k] + A[i] > A[j]:
                     j += 1
-                else:
-                    ans += j - 1 - i
-                    i += 1
-                    j += i == j
+
+                ans += j - i - 1
         return ans % 1000000007
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == "__main__":
     s = Solution()
-    # A = [1, 2, 3, 4, 5, 6]
+    A = [1, 2, 3, 4, 5, 6]
     # A = [2, 2, 3, 4]
-    A = [1, 1, 1, 2, 2]
+    # A = [1, 1, 1, 2, 2]
     print(s.nTriang(A))
