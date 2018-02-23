@@ -60,8 +60,7 @@ class Solution:
         A = self._clear_string(A)
         return int(A == A[::-1])
 
-# NOTE: I got Runtime Error with message **division by zero, array index out of bounds** and I don't know why :/
-
+# NOTE: I got Runtime Error with message **division by zero or array index out of bounds** and I don't know why :/
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
