@@ -29,30 +29,45 @@
 #         A = self._clear_string(A)
 #         return 1 if self._is_palindrome(A) else 0
 
+# class Solution:
+#     # @param A : string
+#     # @return an integer
+#     def isPalindrome(self, A):
+#         low, high = 0, len(A) - 1
+#         while low < high:
+#
+#             while low < high and not A[low].isalnum():
+#                 low += 1
+#
+#             while low < high and not A[high].isalnum():
+#                 high -= 1
+#
+#             if A[low].lower() != A[high].lower():
+#                 return 0
+#
+#             low, high = low + 1, high - 1
+#
+#         return 1
+
+
 class Solution:
     # @param A : string
     # @return an integer
+    def _clear_string(self, A):
+        return ''.join(c.lower() for c in A if c.isalnum())
+
     def isPalindrome(self, A):
-        low, high = 0, len(A) - 1
-        while low < high:
+        A = self._clear_string(A)
+        return int(A == A[::-1])
 
-            while low < high and not A[low].isalnum():
-                low += 1
+# NOTE: I got Runtime Error with message **division by zero, array index out of bounds** and I don't know why :/
 
-            while low < high and not A[high].isalnum():
-                high -= 1
-
-            if A[low].lower() != A[high].lower():
-                return 0
-
-            low, high = low + 1, high - 1
-
-        return 1
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.isPalindrome('A man, a plan, a canal: Panama"'))
-    print(s.isPalindrome('race a car'))
+    print(s.isPalindrome(''))
+    print(s.isPalindrome('A man, a plan, a canal: Panama'))
+    print(s.isPalindrome('race e car'))
 
