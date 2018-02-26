@@ -24,7 +24,6 @@
 
 class Solution:
 
-
     def insert(self, node, head, end_node):
 
         tmp = head
@@ -36,12 +35,15 @@ class Solution:
 
         return node if tmp is end_node else end_node
 
-    def insertionSortList(self, head):
+
+    # @param A : head node of linked list
+    # @return the head node in the linked list
+    def insertionSortList(self, A):
 
         fake_head = ListNode(None)
-        fake_head.next = head
+        fake_head.next = A
 
-        prev, tmp = fake_head, head
+        prev, tmp = fake_head, A
 
         while tmp:
             prev.next = tmp.next
