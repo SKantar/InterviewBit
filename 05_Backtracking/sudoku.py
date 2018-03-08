@@ -67,7 +67,6 @@ class Solution:
     # @return nothing
     def solveSudoku(self, A):
         self._solve(A, 0, 0)
-        print(A)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
