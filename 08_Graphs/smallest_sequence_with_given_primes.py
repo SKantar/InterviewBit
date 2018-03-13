@@ -31,25 +31,28 @@ class Solution:
     # @return a list of integers
     def solve(self, A, B, C, D):
         from heapq import heappop, heappush, heapify
-        nums, ans, i = [A, B, C], set(), 0
+
+        nums = [A, B, C]
+
+        ans, finished, i = list(), set(), 0
 
         heap = list(nums)
         heapify(heap)
 
-
         while i < D:
             curr = heappop(heap)
 
-            if curr in ans:
+            if curr in finished:
                 continue
 
-            ans.add(curr)
+            ans.append(curr)
+            finished.add(curr)
             i += 1
 
             for n in nums:
                 heappush(heap, curr * n)
 
-        return sorted(list(ans))
+        return ans
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
