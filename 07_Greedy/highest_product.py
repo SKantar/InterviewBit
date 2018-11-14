@@ -6,9 +6,7 @@
 # Input:
 #
 # array of integers e.g {1, 2, 3}
-#
-#     NOTE: Solution will fit in a 32-bit signed integer
-#
+#  NOTE: Solution will fit in a 32-bit signed integer
 # Example:
 #
 # [0, -1, 3, 100, 70, 50]
@@ -22,9 +20,10 @@ class Solution:
     # @return an integer
     def maxp3(self, A):
         A.sort()
+
         return max(
-            A[-1] * A[-2] * A[-3],
-            A[-1] * A[-2] * A[0],
-            A[-1] * A[0] * A[1],
-            A[0] * A[1] * A[2],
+            A[0] * A[1] * A[-1],
+            A[-1] * A[-2] * A[-3]
         )
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
