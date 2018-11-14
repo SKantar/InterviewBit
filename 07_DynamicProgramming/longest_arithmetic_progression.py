@@ -25,20 +25,15 @@ class Solution:
     # @param A : tuple of integers
     # @return an integer
     def solve(self, A):
-
-        if len(A) == 0:
-            return 0
-
-        diffmap = {}
-
-        for i, n in enumerate(A):
+        dp = {}
+        for i in range(len(A)):
             for j in range(i + 1, len(A)):
-                diff = n - A[j]
-                if diff in diffmap:
-                    diffmap[diff] += 1
-                else:
-                    diffmap[diff] = 1
-
-        return min(max(diffmap.values()) + 1, len(A)) if len(A) > 1 else 1
+                if (i, A[j] - A[i]) in dp:
+                    dp[(j, A[j] - A[i])]  = 1 + dp[(i, A[j] - A[i])]
+                    del dp[(i, A[j] - A[i])]
+                else: dp[(j, A[j] - A[i])] = 1
+        maxx = 0
+        ## we now find the maximum count
+        return max(dp.values()) + 1
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
