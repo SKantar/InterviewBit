@@ -32,8 +32,7 @@ class Solution:
                     dp[(j, A[j] - A[i])]  = 1 + dp[(i, A[j] - A[i])]
                     del dp[(i, A[j] - A[i])]
                 else: dp[(j, A[j] - A[i])] = 1
-        maxx = 0
         ## we now find the maximum count
-        return max(dp.values()) + 1
+        return max(dp.values()) + 1 if dp.values() else 1
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
