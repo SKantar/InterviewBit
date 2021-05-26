@@ -43,7 +43,7 @@
 # Integer N denotes you have to count how many distinct strings of length N the given DFA accepts.
 # Constraints
 # 1 ≤ K ≤ 50
-# 1 ≤ N ≤ 104
+# 1 ≤ N ≤ 10^4
 #
 # Example :
 #
